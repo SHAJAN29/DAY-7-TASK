@@ -1,0 +1,46 @@
+let request =new XMLHttpRequest();
+
+request.open("GET","https://restcountries.com/v2/all",true);
+request.send();
+
+
+request.onload=function(){
+
+let data = request.response
+
+let result =JSON.parse(data)
+
+
+let res = result.map((element)=>{
+
+for(let key in element.currencies){
+
+    if(element.currencies[key].code==="USD"){
+        console.log(element.name)
+    }
+}
+
+})
+
+}
+output;
+
+
+American Samoa
+Bonaire, Sint Eustatius and Saba
+British Indian Ocean Territory
+Virgin Islands (British)
+Virgin Islands (U.S.)
+Cambodia
+Ecuador
+El Salvador
+Guam
+Marshall Islands
+Micronesia (Federated States of)
+Northern Mariana Islands
+Palau
+Panama
+Puerto Rico
+Timor-Leste
+Turks and Caicos Islands
+United States of America
